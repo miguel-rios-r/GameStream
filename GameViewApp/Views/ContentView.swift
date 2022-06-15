@@ -11,7 +11,6 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Spacer()
                 Color("Bg-Color").ignoresSafeArea()
                 
                 VStack{
@@ -21,6 +20,7 @@ struct ContentView: View {
                         .padding(.bottom, 42)
                     LoginView()
                 }
+//                Home()
             }
         }
     }
@@ -54,8 +54,7 @@ struct LoginView: View {
                 SignupScreenView()
             }
             Spacer()
-            
-        }
+        }.navigationBarHidden(true).navigationBarBackButtonHidden(true)
     }
 }
 
@@ -96,7 +95,7 @@ struct LoginScreenView: View {
                     .foregroundColor(Color("Dark-Cian"))
                 
                 ZStack(alignment:.leading){
-                    if correo.isEmpty{
+                    if pass.isEmpty{
                         Text("·····")
                             .font(.caption)
                             .foregroundColor(.gray)
@@ -319,7 +318,7 @@ struct SignupScreenView: View {
                     
                 }.padding(.horizontal, 77.0)
             }
-        }
+        }.navigationBarHidden(true).navigationBarBackButtonHidden(true)
     }
 }
 
